@@ -1,0 +1,37 @@
+# The api key, secret key, and canvas page name are required to get started
+#
+# Tunnel configuration is only needed if you are going to use the facebooker:tunnel Rake tasks
+# Your callback url in Facebook should be set to http://public_host:public_port
+#
+# If you're building a Facebook connect site, 
+#    change the value of set_asset_host_to_callback_url to false
+#
+# Article: http://passthehash.com/hash/2009/05/how-to-facebook-connect-your-rails-app.html
+#
+defaults: &defaults
+  api_key: d021704a60cc8bc40f75e2b6378d4234
+  secret_key: bb79555f0450db437536df6f008a4194
+  canvas_page_name: authlogic_test
+  callback_url: http://localhost:3000
+  pretty_errors: true
+  set_asset_host_to_callback_url: false
+  tunnel:
+    public_host_username: 
+    public_host: 
+    public_port: 4007
+    local_port: 3000
+    
+development:
+  <<: *defaults
+  
+test: &test
+  <<: *defaults
+  
+cucumber:
+  <<: *test
+  
+production: &production
+  <<: *defaults
+  
+staging:
+  <<: *production

@@ -2,6 +2,7 @@ class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
       t.authenticatable
+      t.facebook_connectable
       t.confirmable
       t.recoverable
       t.rememberable

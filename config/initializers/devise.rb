@@ -61,7 +61,16 @@ Devise.setup do |config|
   #   end
   #   manager.default_strategies.unshift :twitter_oauth
   # end
-
+  
+  #config.warden do |manager|
+  #  manager.facebook_connectable do |fbc|
+  #    fbc.facebook_uid_field = :facebook_uid
+  #    fbc.facebook_session_key_field = :facebook_session_key
+  #    gbc.facebook_skip_create = false
+  #  end
+  #  #manager.default_strategies.unshift :facebook_connectable
+  #end
+  
   # Configure default_url_options if you are using dynamic segments in :path_prefix
   # for devise_for.
   #
@@ -69,3 +78,4 @@ Devise.setup do |config|
   #   { :locale => I18n.locale }
   # end
 end
+Devise::STRATEGIES.unshift :facebook_connectable

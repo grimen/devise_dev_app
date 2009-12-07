@@ -5,4 +5,5 @@ en:
   devise:
     sessions:
       signed_in: "Hey! You signed in with success!"
+      invalid: "Can't sign in"
 
