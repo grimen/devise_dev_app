@@ -1,12 +1,10 @@
 <h1>Hello!</h1>
-<%#= signed_in?(:user) %>
 <% #unless admin_signed_in? -%>
   <p><%#= link_to 'Sign in as Admin', new_admin_session_path %></p>
 <% #end -%>
-<% unless user_signed_in? -%>
-  <p><%= link_to 'Sign in as User', new_user_session_path %></p>
-  <p><%= link_to 'Sign up as User', new_user_path %></p>
-<% end -%>
-<%= user_signed_in? %>
-<p><%= facebook_connect_link :to => :user, :autologoutlink => true %></p>
-<p>Hello World!</p>
+<% #unless user_signed_in? -%>
+  <p><%#= link_to 'Sign in as User', new_user_session_path %></p>
+  <p><%#= link_to 'Sign up as User', new_user_path %></p>
+<% #end -%>
+
+<p><%= facebook_link :for => :user %></p>

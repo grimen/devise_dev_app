@@ -10,9 +10,9 @@
 
 <% form_for @user, :url => user_path do |f| -%>
   <% field_set_tag 'Update my password' do -%>
-    <p><%= f.password_field :password %></p>
+    <p><%#= f.password_field :password %></p>
     <%= error_message_on @user, :password %>
-    <p><%= f.password_field :password_confirmation %></p>
+    <p><%#= f.password_field :password_confirmation %></p>
     <%= error_message_on @user, :password_confirmation %>
     <p class="submit"><%= f.submit 'Update password' %></p>
   <% end -%>

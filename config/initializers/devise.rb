@@ -78,4 +78,3 @@ Devise.setup do |config|
   #   { :locale => I18n.locale }
   # end
 end
-Devise::STRATEGIES.unshift :facebook_connectable
