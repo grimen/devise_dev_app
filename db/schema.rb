@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(:version => 20091009223419) do
     t.string   "email",                :limit => 100, :null => false
     t.string   "encrypted_password",   :limit => 40,  :null => false
     t.string   "password_salt",        :limit => 20,  :null => false
-    t.string   "facebook_uid"
-    t.string   "facebook_session_key"
+    t.integer  "facebook_uid",         :limit => 8
+    t.string   "facebook_session_key", :limit => 149
     t.string   "confirmation_token",   :limit => 20
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
