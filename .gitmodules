@@ -1,0 +1,6 @@
+[submodule "public/javascripts/facebox"]
+	path = public/javascripts/facebox
+	url = git://github.com/defunkt/facebox.git
+[submodule "public/javascripts/jquery-inspect"]
+	path = public/javascripts/jquery-inspect
+	url = git://github.com/ssoper/jquery-inspect.git

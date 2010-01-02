@@ -1,0 +1,20 @@
+// Facebook Cónnect
+//
+= #facebook_link :for => :user if Devise.mappings[:user].for.include?(:facebook_connectable)
+
+// Native:
+//
+// = link_to "Sign up", new_user_path, :class => 'devise sign_up_link user' unless signed_in?(:user)
+//= link_to "Sign in", new_user_session_path, :class => 'devise sign_in_link user' unless signed_in?(:user)
+//= link_to "Sign out", destroy_user_session_path if signed_in?(:user)
+
+// With helpers:
+//
+= sign_up_link(:user)
+= sign_in_out_link(:user, :js => true)
+
+// Dummie-link
+//
+= link_to "Test", edit_user_path, :rel => 'devise'
+
+= content_tag(:div, '', :id => 'user_links')

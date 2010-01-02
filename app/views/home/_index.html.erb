@@ -1,0 +1,7 @@
+<h1>Hello!</h1>
+
+<p><%= facebook_link :for => :user %></p>
+
+<p><%#= facebook_disconnect_link :for => :user %></p>
+
+<p><% form_for(:user, :url => session_path(:user), :html => {}) { |f| concat '' } %></p>

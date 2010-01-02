@@ -36,7 +36,7 @@ Devise.setup do |config|
 
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again.
-  # config.timeout_in = 10.minutes
+  config.timeout_in = 5.seconds
 
   # Configure the e-mail address which will be shown in DeviseMailer.
   # config.mailer_sender = "foo.bar@yourapp.com"
@@ -64,7 +64,7 @@ Devise.setup do |config|
   
   config.facebook_uid_field = :facebook_uid
   config.facebook_session_key_field = :facebook_session_key
-  config.facebook_skip_create = false
+  config.facebook_auto_create_account = true
   
   # Configure default_url_options if you are using dynamic segments in :path_prefix
   # for devise_for.

@@ -1,6 +1,6 @@
 <% title 'Sign Up' -%>
 
-<% form_for @user, :url => user_path do |f| -%>
+<% form_for @user, :url => user_path, :html => {:id => "user_sign_up", :class => 'sign_up user'} do |f| -%>
   <%= f.error_messages %>
   <p><%= f.label :email %></p>
   <p><%= f.text_field :email %></p>

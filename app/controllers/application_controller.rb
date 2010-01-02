@@ -7,4 +7,21 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :password_confirmation
+  
+  # before_filter :halt_if_no_user
+  # 
+  # def halt_if_no_user
+  #   if request.xhr? && !signed_in?(:user) && params[:controller] != 'sessions'
+  #     render(:nothing => true, :status => 401) && return
+  #   end
+  # end
+  
+  # def authenticate_user!
+  #   unless current_user
+  #     render :nothing => true, :status => 401 && return if request.xhr?
+  #     super
+  #   end
+  #   super
+  # end
+  
 end

@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
+  
   before_filter :authenticate_user!, :only => [:edit, :update, :destroy]
-
+  
   def new
     @user = User.new
+    render :layout => !request.xhr?
   end
 
   # Deals with user creation. This is just an example that plays around will all possible scenarios.
@@ -27,7 +29,11 @@ class UsersController < ApplicationController
       # Redirect to stored location for user in session or to the home page.
       redirect_to stored_location_for(:user) || root_url
     else
-      render :new
+      if request.xhr?
+        render :text => 'xxxxxxxx', :status => 406
+      else
+        render :new
+      end
     end
   end
   
@@ -41,7 +47,11 @@ class UsersController < ApplicationController
       flash[:success] = 'Updated successfully'
       redirect_to root_path
     else
-      render :edit
+      if request.xhr?
+        render :text => flash[:failure], :status => 406
+      else
+        render :edit
+      end
     end
   end
 
@@ -51,4 +61,12 @@ class UsersController < ApplicationController
     flash[:success] = t('flash.users.destroy.notice', :default => 'User was successfully destroyed.')
     redirect_to root_path
   end
+  
+  protected
+    
+    def authenticate_user!
+      #render(:nothing => true, :status => 401, :layout => false) && return if request.xhr?   # OK
+      render('sessions/new', :status => 401, :layout => false) && return if request.xhr?
+    end
+    
 end
